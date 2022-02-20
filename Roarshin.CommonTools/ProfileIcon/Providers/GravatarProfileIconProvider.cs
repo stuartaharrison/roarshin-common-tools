@@ -1,17 +1,16 @@
-﻿using System.Security.Cryptography;
-using System.Text;
+﻿using Roarshin.CommonTools.Helpers;
 
-namespace Roarshin.CommonTools.ProfileIconProviders {
+namespace Roarshin.CommonTools.ProfileIcon.Providers {
     
     public class GravatarProfileIconProvider : IProfileIconProvider {
 
-        public string BaseUrl { get; protected set; } = Constants.GravatarBaseUrl;
+        public string BaseUrl { get; } = ProfileIconConstants.GravatarBaseUrl;
 
-        public string DefaultIcon { get; protected set; } = Constants.GravatarDefaultIcon;
+        public string DefaultIcon { get; } = ProfileIconConstants.GravatarDefaultIcon;
 
         public string GetIconUrl(string emailAddress) {
-            var emailMD5 = Utils.GenerateMd5(emailAddress);
-            var url = $"{BaseUrl}{emailMD5}";
+            var emailMd5 = Utils.GenerateMd5(emailAddress);
+            var url = $"{BaseUrl}{emailMd5}";
 
             if (!string.IsNullOrWhiteSpace(DefaultIcon)) {
                 url += $"?d={DefaultIcon}";

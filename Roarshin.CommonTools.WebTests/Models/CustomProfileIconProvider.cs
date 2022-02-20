@@ -1,5 +1,6 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
+using Roarshin.CommonTools.ProfileIcon;
 
 namespace Roarshin.CommonTools.WebTests.Models {
 

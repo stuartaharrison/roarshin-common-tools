@@ -1,11 +1,5 @@
-﻿namespace Roarshin.CommonTools {
+﻿namespace Roarshin.CommonTools.ProfileIcon {
     
-    public enum ProfileIconProvider {
-        Custom,
-        Gravatar,
-        RoboHash
-    }
-
     public interface IProfileIconProvider {
 
         /// <summary>

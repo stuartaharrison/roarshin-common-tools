@@ -1,14 +1,16 @@
-﻿namespace Roarshin.CommonTools.ProfileIconProviders {
+﻿using Roarshin.CommonTools.Helpers;
+
+namespace Roarshin.CommonTools.ProfileIcon.Providers {
     
     public class RoboHashProfileIconProvider : IProfileIconProvider {
 
-        public string BaseUrl { get; protected set; } = Constants.RoboHashBaseUrl;
+        public string BaseUrl { get; } = ProfileIconConstants.RoboHashBaseUrl;
 
-        public string DefaultIconSet { get; protected set; } = Constants.RoboHashDefaultIconSet;
+        public string DefaultIconSet { get; } = ProfileIconConstants.RoboHashDefaultIconSet;
 
         public string GetIconUrl(string emailAddress) {
-            var emailMD5 = Utils.GenerateMd5(emailAddress);
-            var url = $"{BaseUrl}{emailMD5}.png";
+            var emailMd5 = Utils.GenerateMd5(emailAddress);
+            var url = $"{BaseUrl}{emailMd5}.png";
 
             if (!string.IsNullOrWhiteSpace(DefaultIconSet)) {
                 url += $"?set={DefaultIconSet}";

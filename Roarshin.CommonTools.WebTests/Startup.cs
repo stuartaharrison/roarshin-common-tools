@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Roarshin.CommonTools.Database;
 
 namespace Roarshin.CommonTools.WebTests {
     
@@ -23,9 +24,12 @@ namespace Roarshin.CommonTools.WebTests {
         public void ConfigureServices(IServiceCollection services) {
             // dependency injection for our common tools
             services.AddRoarshinCommonTools(cfg => {
-                cfg.EnableProfileIconProvider(() => {
-                    return new CustomProfileIconProvider();
+                
+                cfg.AddDataProvider(DataProviders.MySql, config => {
+                    config.WithConfiguration(Configuration);
                 });
+                
+                cfg.AddProfileIconProvider(() => new CustomProfileIconProvider());
             });
 
             // setup controllers & add swagger so we can run tests directly from the browser

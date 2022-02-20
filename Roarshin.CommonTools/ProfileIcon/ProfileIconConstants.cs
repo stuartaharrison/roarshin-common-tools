@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Roarshin.CommonTools {
+﻿namespace Roarshin.CommonTools.ProfileIcon {
     
-    public static class Constants {
+    public static class ProfileIconConstants {
 
         public const string GravatarBaseUrl = "https://www.gravatar.com/avatar/";
 

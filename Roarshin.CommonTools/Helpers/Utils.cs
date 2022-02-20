@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace Roarshin.CommonTools {
+namespace Roarshin.CommonTools.Helpers {
     
     internal static class Utils {
 
@@ -9,13 +9,13 @@ namespace Roarshin.CommonTools {
             using var md5 = MD5.Create();
 
             var emailToEncrypt = value.Trim().ToLower();
-            byte[] inputBytes = Encoding.ASCII.GetBytes(emailToEncrypt);
-            byte[] hashBytes = md5.ComputeHash(inputBytes);
+            var inputBytes = Encoding.ASCII.GetBytes(emailToEncrypt);
+            var hashBytes = md5.ComputeHash(inputBytes);
 
             // Convert the byte array to hexadecimal string
             var sb = new StringBuilder();
-            for (int i = 0; i < hashBytes.Length; i++) {
-                sb.Append(hashBytes[i].ToString("X2"));
+            foreach (var t in hashBytes) {
+                sb.Append(t.ToString("X2"));
             }
 
             return sb.ToString();

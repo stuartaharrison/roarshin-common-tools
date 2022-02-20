@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Roarshin.CommonTools.ProfileIconProviders;
+using Roarshin.CommonTools.ProfileIcon;
+using Roarshin.CommonTools.ProfileIcon.Providers;
 
 namespace Roarshin.CommonTools.WebTests.Controllers {
 
